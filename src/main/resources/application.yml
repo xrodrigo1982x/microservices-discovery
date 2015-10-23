@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: discovery-service
+  cloud:
+    config:
+      enabled: true
+
+eureka:
+  enableSelfPreservation: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    instanceEnabledOnit: true
+
+info:
+  artifact: ${project.artifactId}
+  name: ${spring.application.name}
+  description: ${project.description}
+  version: ${project.version}
