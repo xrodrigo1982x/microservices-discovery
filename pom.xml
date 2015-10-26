@@ -89,6 +89,16 @@
                 <configuration>
                     <mainClass>com.tweet.config.DiscoveryMain</mainClass>
                     <finalName>${appName}</finalName>
+                    <requiresUnpack>
+                        <dependency>
+                            <groupId>com.netflix.eureka</groupId>
+                            <artifactId>eureka-core</artifactId>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.netflix.eureka</groupId>
+                            <artifactId>eureka-client</artifactId>
+                        </dependency>
+                    </requiresUnpack>
                 </configuration>
                 <executions>
                     <execution>
