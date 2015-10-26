@@ -1,5 +1,3 @@
-
-
 info:
   artifact: ${project.artifactId}
   name: ${spring.application.name}
