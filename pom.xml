@@ -6,12 +6,13 @@
 
     <groupId>discovery</groupId>
     <artifactId>discovery</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
     <description>Serviço de descoberta</description>
 
     <properties>
         <appName>discovery-service</appName>
+        <buildNumber>0</buildNumber>
     </properties>
 
     <dependencyManagement>
