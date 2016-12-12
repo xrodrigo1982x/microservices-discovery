@@ -5,14 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>discovery</groupId>
-    <artifactId>discovery</artifactId>
+    <artifactId>discovery-service</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <description>Serviço de descoberta</description>
 
     <properties>
-        <appName>discovery-service</appName>
         <buildNumber>0</buildNumber>
+        <buildVersion>${project.version}.${buildNumber}</buildVersion>
+        <buildName>${project.artifactId}.${buildVersion}</buildName>
     </properties>
 
     <dependencyManagement>
@@ -69,7 +70,7 @@
     </dependencies>
 
     <build>
-        <finalName>${appName}.${project.version}.${buildNumber}</finalName>
+        <finalName>${buildName}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -89,7 +90,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>com.tweet.config.DiscoveryMain</mainClass>
-                    <finalName>${appName}.${project.version}.${buildNumber}</finalName>
+                    <finalName>${project.artifactId}.${project.version}.${buildNumber}</finalName>
                     <requiresUnpack>
                         <dependency>
                             <groupId>com.netflix.eureka</groupId>
@@ -116,14 +117,14 @@
                 <configuration>
                     <imageName>micro/${project.artifactId}</imageName>
                     <imageTags>
-                        <imageTag>${project.version}.${buildNumber}</imageTag>
+                        <imageTag>${buildVersion}</imageTag>
                     </imageTags>
                     <dockerDirectory>target/classes</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
                             <directory>${project.build.directory}</directory>
-                            <include>${appName}.jar</include>
+                            <include>${buildName}.jar</include>
                         </resource>
                     </resources>
                 </configuration>
