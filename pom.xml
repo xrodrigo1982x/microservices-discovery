@@ -68,7 +68,7 @@
     </dependencies>
 
     <build>
-        <finalName>${appName}.${project.version}.${build}</finalName>
+        <finalName>${appName}.${project.version}.${buildNumber}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -88,7 +88,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>com.tweet.config.DiscoveryMain</mainClass>
-                    <finalName>${appName}</finalName>
+                    <finalName>${appName}.${project.version}.${buildNumber}</finalName>
                     <requiresUnpack>
                         <dependency>
                             <groupId>com.netflix.eureka</groupId>
@@ -115,7 +115,7 @@
                 <configuration>
                     <imageName>micro/${project.artifactId}</imageName>
                     <imageTags>
-                        <imageTag>${project.version}.${build}</imageTag>
+                        <imageTag>${project.version}.${buildNumber}</imageTag>
                     </imageTags>
                     <dockerDirectory>target/classes</dockerDirectory>
                     <resources>
